@@ -1,0 +1,24 @@
+{
+  "name": "consumer",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "rsbuild build",
+    "check": "biome check --write",
+    "dev": "rsbuild dev",
+    "devopen": "rsbuild dev --open",
+    "format": "biome format --write",
+    "preview": "rsbuild preview"
+  },
+  "dependencies": {
+    "@module-federation/enhanced": "^0.3.2",
+    "vue": "^3.4.34"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@rsbuild/core": "1.0.1-beta.6",
+    "@rsbuild/plugin-vue": "1.0.1-beta.6",
+    "typescript": "^5.5.4"
+  },
+  "packageManager": "yarn@4.3.1"
+}
