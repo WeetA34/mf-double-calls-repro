@@ -13,6 +13,9 @@ Good CSS call (from provider):
 Duplicated and Wrong CSS call (from consumer instead of provider):
 ![Wrong CSS call](03_bad_css.png)
 
+Enable to load in Safari:
+![Wrong CSS call](04_safari_error.png)
+
 rsbuild scaffold has been used to create this project.
 ## Test
 
