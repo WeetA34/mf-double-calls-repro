@@ -5,11 +5,8 @@ import { pluginModuleFederation } from "@module-federation/rsbuild-plugin";
 export default defineConfig({
 	// dev: {
 	//   // It is necessary to configure assetPrefix, and in the production environment, you need to configure output.assetPrefix
-	//   assetPrefix: 'http://localhost:3000',
+	//   assetPrefix: 'http://localhost:3001',
 	// },
-	html: {
-		template: "./src/index.html",
-	},
 	plugins: [
 		pluginModuleFederation({
 			dts: {
@@ -17,12 +14,24 @@ export default defineConfig({
 					compilerInstance: "vue-tsc",
 				},
 			},
-			name: "consumer",
+			name: "producer",
+			exposes: {
+				"./date": "./src/Date.vue",
+			},
 			shared: ["vue"],
 		}),
 		pluginVue(),
 	],
 	server: {
-		port: 3000,
+		port: 3001,
 	},
+	// These are the default values
+	// tools: {
+	// 	rspack: {
+	// 		output: {
+	// 			publicPath: "auto",
+	// 			uniqueName: "producer",
+	// 		},
+	// 	},
+	// },
 });
