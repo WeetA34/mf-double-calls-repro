@@ -15,7 +15,7 @@ export default defineConfig({
     rspack: (config, { appendPlugins }) => {
       // You need to set a unique value that is not equal to other applications
       // biome-ignore lint/style/noNonNullAssertion: <explanation>
-      config.output!.uniqueName = 'provider';
+      config.output!.uniqueName = 'producer';
       appendPlugins([
         new ModuleFederationPlugin({
           dts: {
@@ -23,8 +23,8 @@ export default defineConfig({
               compilerInstance: 'vue-tsc',
             },
           },
-          getPublicPath: 'function() {return window.__PROVIDER_PUBLIC_PATH__}',
-          name: 'provider',
+          getPublicPath: 'function() {return window.__PRODUCER_PUBLIC_PATH__}',
+          name: 'producer',
           exposes: {
             './date': './src/Date.vue',
           },

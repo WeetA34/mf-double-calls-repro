@@ -16,19 +16,19 @@ import ErrorComponent from './ErrorComponent.vue';
 
 declare global {
   interface Window {
-    __PROVIDER_PUBLIC_PATH__: string;
+    __PRODUCER_PUBLIC_PATH__: string;
   }
 }
 
 registerRemotes([
   {
-    name: 'provider',
-    entry: `${window.__PROVIDER_PUBLIC_PATH__}mf-manifest.json`,
+    name: 'producer',
+    entry: `${window.__PRODUCER_PUBLIC_PATH__}mf-manifest.json`,
   },
 ]);
 
 const MyDate = defineAsyncComponent({
-  loader: () => loadRemote('provider/date'),
+  loader: () => loadRemote('producer/date'),
   errorComponent: ErrorComponent,
   timeout: 3000
 });
